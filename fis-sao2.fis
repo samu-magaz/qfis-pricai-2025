@@ -1,0 +1,59 @@
+[System]
+Name='fis-sao2'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=16
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='SaO2 Reduction'
+Range=[0 100]
+NumMFs=4
+MF1='low':'linzmf',[1 2]
+MF2='normal':'trapmf',[1.8 2 4 5]
+MF3='high':'trapmf',[4 6 8 10]
+MF4='very_high':'linsmf',[9 12]
+
+[Input2]
+Name='SaO2 Red. Duration'
+Range=[0 400]
+NumMFs=5
+MF1='very_short':'linzmf',[3 4]
+MF2='short':'trapmf',[3 4 5 6]
+MF3='normal':'trapmf',[5 6.5 35 60]
+MF4='large':'trapmf',[35 45 120 130]
+MF5='very_large':'linsmf',[120 130]
+
+[Output1]
+Name='Event'
+Range=[0 1]
+NumMFs=5
+MF1='very_low':'constant',[0.0]
+MF2='low':'constant',[0.3]
+MF3='normal':'constant',[0.5]
+MF4='high':'constant',[0.7]
+MF5='very_high':'constant',[1.0]
+
+[Rules]
+1 0, 1 (1) : 1
+2 2, 4 (1) : 1
+2 3, 5 (1) : 1
+2 4, 3 (1) : 1
+2 5, 1 (1) : 1
+3 2, 5 (1) : 1
+3 3, 5 (1) : 1
+3 4, 4 (1) : 1
+3 5, 2 (1) : 1
+4 2, 5 (1) : 1
+4 3, 5 (1) : 1
+4 4, 4 (1) : 1
+4 5, 2 (1) : 1
+0 1, 2 (1) : 1
+2 1, 3 (1) : 1
+3 1, 4 (1) : 1
