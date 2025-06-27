@@ -7,3 +7,13 @@ In this repository, you will find the implementation of the experiments presente
 ## Classical FIS
 
 To test the classical implementation, MATLAB's Fuzzy Logic Designer is required. Once the software is ready, simply import the file ```fis-sao2.fis``` and test as desired.
+
+## Quantum FIS
+
+To test the quantum implementation, a Jupyter notebook ```qifs-sao2.ipynb``` illustrating the use of the software is provided. To run the circuit via CLI, simply type the following command:
+
+```python src/qfis.py -rqc [CRISP_INPUT_SAO2RED] [CRISP_INPUT_SAO2REDDUR]```
+
+For example:
+
+```python src/qfis.py -rqc 42 64```
