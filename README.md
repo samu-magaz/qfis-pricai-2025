@@ -11,9 +11,12 @@ To test the classical implementation, MATLAB's Fuzzy Logic Designer is required.
 ## Quantum FIS
 
 To test the quantum implementation, a Jupyter notebook ```qifs-sao2.ipynb``` illustrating the use of the software is provided. To run the circuit via CLI, simply type the following command:
-
-```python src/qfis.py -rqc [CRISP_INPUT_SAO2RED] [CRISP_INPUT_SAO2REDDUR]```
+```
+python src/qfis.py -rqc [CRISP_INPUT_SAO2RED] [CRISP_INPUT_SAO2REDDUR]
+```
 
 For example:
 
-```python src/qfis.py -rqc 42 64```
+```
+python src/qfis.py -rqc 42 64
+```
